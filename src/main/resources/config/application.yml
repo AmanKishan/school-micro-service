@@ -1,0 +1,33 @@
+server:
+  port: 8082
+
+spring:
+ application:
+  name: school-microservice
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-durarion-in-seconds: 2
+  client:
+    service-url:
+      deafult-zone: http://localhost:8761/eureka
+    healthcheck:
+      enabled: true
+    lease:
+      durartion: 5
+
+management:
+  security:
+    enabled: false
+
+logging:
+  level:
+    com.dummy.schoolmicroservice: DEBUG
+        
+student-servers:
+  ribbion:
+    eureka:
+      enabled: true
+    list-of-servers: localhost:8081,localhost:8083
+    server-list-refresh-interval: 1000          

@@ -1,0 +1,6 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://dummy-eureka:8761/eureka
+   
+                    
